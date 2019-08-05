@@ -44,11 +44,53 @@ spl_autoload_register('autoloadClass');
 
 switch ($_GET['model']) {
     case 'subscriber':
-        # code...
+        switch ($_GET['method']) {
+
+            case 'list':
+                SubscriberController::list();
+                break;
+
+            case 'read':
+                SubscriberController::read(intval($_GET['id']));
+                break;
+
+            case 'new':
+                SubscriberController::new($_POST);
+                break;
+
+            case 'edit':
+                SubscriberController::edit($_GET['id']);
+                break;
+
+            case 'delete':
+                SubscriberController::delete($_GET['id']);
+                break;
+        }
         break;
 
     case 'subscriber_book':
-        # code...
+        switch ($_GET['method']) {
+
+            case 'list':
+                Subscriber_bookController::list();
+                break;
+
+            case 'read':
+                Subscriber_bookController::read(intval($_GET['id']));
+                break;
+
+            case 'new':
+                Subscriber_bookController::new($_POST);
+                break;
+
+            case 'edit':
+                Subscriber_bookController::edit($_GET['id']);
+                break;
+
+            case 'delete':
+                Subscriber_bookController::delete($_GET['id']);
+                break;
+        }
         break;
 
     case 'book':
