@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * parzival
  * Autoload Classes
  */
 
@@ -51,28 +52,28 @@ switch ($_GET['model']) {
         break;
 
     case 'book':
-            switch($_GET['method']) {
+        switch ($_GET['method']) {
 
-                case 'list':
-                    BookController::list();
-                    break;
+            case 'list':
+                BookController::list();
+                break;
 
-                case 'read':
-                    BookController::read( intval( $_GET['id'] ) );
-                    break;
+            case 'read':
+                BookController::read(intval($_GET['id']));
+                break;
 
-                case 'new':
-                    BookController::new($_POST);
-                    break;
+            case 'new':
+                BookController::new($_POST);
+                break;
 
-                case 'edit':
-                    BookController::edit($_GET['id']);
-                    break;
+            case 'edit':
+                BookController::edit($_GET['id']);
+                break;
 
-                case 'delete':
-                    BookController::delete($_GET['id']);
-                    break;
-            }
+            case 'delete':
+                BookController::delete($_GET['id']);
+                break;
+        }
         break;
 
     default:
