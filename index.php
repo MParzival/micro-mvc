@@ -1,7 +1,7 @@
 <?php
 
 /**
- * parzival
+ * Parzival 
  * Autoload Classes
  */
 
