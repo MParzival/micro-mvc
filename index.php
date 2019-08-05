@@ -44,53 +44,69 @@ spl_autoload_register('autoloadClass');
 
 switch ($_GET['model']) {
     case 'subscriber':
-        switch ($_GET['method']) {
+    switch ($_GET['method']) {
 
-            case 'list':
-                SubscriberController::list();
-                break;
+        case 'list':
+            SubscriberController::list();
+            break;
 
-            case 'read':
-                SubscriberController::read(intval($_GET['id']));
-                break;
+        case 'read':
+            SubscriberController::read(intval($_GET['id']));
+            break;
 
-            case 'new':
-                SubscriberController::new($_POST);
-                break;
+        case 'new':
+            SubscriberController::new($_POST);
+            break;
 
-            case 'edit':
-                SubscriberController::edit($_GET['id']);
-                break;
+        case 'edit':
+            SubscriberController::edit(intval($_GET['id']));
+            break;
 
-            case 'delete':
-                SubscriberController::delete($_GET['id']);
-                break;
-        }
+        case 'confirmEdit':
+            SubscriberController::confirmEdit(intval($_GET['id']),$_POST);
+            break;
+
+        case 'delete':
+            SubscriberController::delete(intval($_GET['id']));
+            break;
+
+        case 'create':
+            SubscriberController::create();
+            break;
+    }
         break;
 
     case 'subscriber_book':
-        switch ($_GET['method']) {
+    switch ($_GET['method']) {
 
-            case 'list':
-                Subscriber_bookController::list();
-                break;
+        case 'list':
+            Subscriber_bookController::list();
+            break;
 
-            case 'read':
-                Subscriber_bookController::read(intval($_GET['id']));
-                break;
+        case 'read':
+            Subscriber_bookController::read(intval($_GET['id']));
+            break;
 
-            case 'new':
-                Subscriber_bookController::new($_POST);
-                break;
+        case 'new':
+            Subscriber_bookController::new($_POST);
+            break;
 
-            case 'edit':
-                Subscriber_bookController::edit($_GET['id']);
-                break;
+        case 'edit':
+            Subscriber_bookController::edit(intval($_GET['id']));
+            break;
 
-            case 'delete':
-                Subscriber_bookController::delete($_GET['id']);
-                break;
-        }
+        case 'confirmEdit':
+            Subscriber_bookController::confirmEdit(intval($_GET['id']),$_POST);
+            break;
+
+        case 'delete':
+            Subscriber_bookController::delete(intval($_GET['id']));
+            break;
+
+        case 'create':
+            Subscriber_bookController::create();
+            break;
+    }
         break;
 
     case 'book':
@@ -109,11 +125,19 @@ switch ($_GET['model']) {
                 break;
 
             case 'edit':
-                BookController::edit($_GET['id']);
+                BookController::edit(intval($_GET['id']));
+                break;
+
+            case 'confirmEdit':
+                BookController::confirmEdit(intval($_GET['id']),$_POST);
                 break;
 
             case 'delete':
-                BookController::delete($_GET['id']);
+                BookController::delete(intval($_GET['id']));
+                break;
+
+            case 'create':
+                BookController::create();
                 break;
         }
         break;

@@ -16,17 +16,17 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Title</th>
-                <th>Author</th>
+                <th>Livre</th>
+                <th>Auteur</th>
             </tr>
         </thead>
         <tbody>
 
-            <?php foreach ($books as $book) : ?>
+            <?php foreach ($subscribers_book as $subscriber_book) : ?>
                 <tr>
-                    <td><?= $book['id'] ?></td>
-                    <td><?= $book['title'] ?></td>
-                    <td><?= $book['author'] ?></td>
+                    <td><?= $subscriber_book['id'] ?></td>
+                    <td><?= $subscriber_book['title'] ?></td>
+                    <td><?= $subscriber_book['firstname'] ?></td>
                 </tr>
 
             <?php endforeach; ?>

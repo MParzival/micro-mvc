@@ -1,6 +1,6 @@
 <?php
 
-class Book extends AbstractDb
+class Subscriber extends AbstractDb
 {
 
     public static function findAll()
@@ -9,7 +9,7 @@ class Book extends AbstractDb
         $bdd = self::connectDb();
 
         // 2. request
-        $request = 'SELECT * FROM book';
+        $request = 'SELECT * FROM subscriber';
 
         // 3. execution de la request
         $response = $bdd->query($request);
@@ -23,7 +23,7 @@ class Book extends AbstractDb
 
         $bdd = self::connectDb();
 
-        $request = 'SELECT * FROM book WHERE id = ' . $id;
+        $request = 'SELECT * FROM subscriber WHERE id = ' . $id;
 
         $response = $bdd->query($request);
 
@@ -35,7 +35,7 @@ class Book extends AbstractDb
 
         $bdd = self::connectDb();
 
-        $request = 'INSERT INTO book(title, author) VALUES ("' . $params['title'] . '" ,  "' . $params['author'] . '")';
+        $request = 'INSERT INTO subscriber (firstname, lastname) VALUES ("' . $params['firstname'] . '" ,  "' . $params['lastname'] . '")';
 
         $bdd->query($request);
 
@@ -46,7 +46,7 @@ class Book extends AbstractDb
     {
         $bdd = self::connectDb();
 
-        $request = 'DELETE FROM `book` WHERE id = ' . $id;
+        $request = 'DELETE FROM `subscriber` WHERE id = ' . $id;
 
         $bdd->query($request);
     }
@@ -54,7 +54,7 @@ class Book extends AbstractDb
     public static function edit(int $id)
     {
         $bdd = self::connectDb();
-        $request = 'SELECT * FROM `book` WHERE id = ' . $id;
+        $request = 'SELECT * FROM `subscriber` WHERE id = ' . $id;
         $response = $bdd->query($request);
         $donnees = $response->fetch();
         return $donnees;
@@ -63,9 +63,7 @@ class Book extends AbstractDb
     public static function confirmEdit(int $id, $params)
     {
         $bdd = self::connectDb();
-        $request = 'UPDATE `book` SET title = "' . $params['title'] . '" , author = "' . $params['author'] . '" WHERE id= ' . $id;
-
-        var_dump($request);
+        $request = 'UPDATE `subscriber` SET firstname = "' . $params['firstname'] . '" , lastname = "' . $params['lastname'] . '" WHERE id= ' . $id;
         $bdd->query($request);
     }
 }
