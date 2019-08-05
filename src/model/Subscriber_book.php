@@ -29,11 +29,10 @@ class Subscriber_book extends AbstractDb
     {
 
         $bdd = self::connectDb();
+        var_dump($params);
 
-        $request = 'INSERT INTO subscriber (firstname, title) VALUES ("' . $params['firstname'] . '" ,  "' . $params['title'] . '")';
+        $request = 'INSERT INTO subscriber_book (id_subscriber, id_book) VALUES (' . $params['selectSubscriber'] . ' ,  ' . $params['selectTitle'] . ')';
 
         $bdd->query($request);
-
-        var_dump($bdd->errorInfo());
     }
 }

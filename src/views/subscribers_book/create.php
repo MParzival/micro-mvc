@@ -17,13 +17,13 @@
             <label for="firstname">Firstname</label>
             <select name="selectSubscriber" id="firstname">
                 <?php foreach ($subscribers as $subscriber) : ?>
-                    <option><?= $subscriber['firstname'] ?></option>
+                    <option value="<?= $subscriber['id'] ?>"><?= $subscriber['firstname'] ?></option>
                 <?php endforeach; ?>
             </select>
             <label for="title">Title</label>
-            <select name="selectSubscriber" id="title">
+            <select name="selectTitle" id="title">
                 <?php foreach ($books as $book) : ?>
-                    <option><?= $book['title'] ?></option>
+                    <option value="<?= $book['id'] ?>"><?= $book['title'] ?></option>
                 <?php endforeach; ?>
             </select>
             <input type="submit" class="form-control" value="Création de l'emprunt" aria-describedby="helpId">
